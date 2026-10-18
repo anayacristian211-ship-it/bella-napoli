@@ -1,0 +1,480 @@
+/* PALETA DE COLORES */
+:root {
+    --rojo: #b52824;
+    --rojo-oscuro: #821c19;
+    --amarillo: #f4bd45;
+    --crema: #fff8e9;
+    --blanco: #ffffff;
+    --texto: #30251f;
+    --gris: #74665e;
+    --sombra: 0 5px 18px rgba(48, 37, 31, 0.12);
+}
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+.contenedor {
+    width: min(1120px, 90%);
+    margin-inline: auto;
+}
+
+.seccion {
+    padding-block: 75px;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--rojo);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* NAVEGACIÓN */
+.encabezado {
+    background: var(--blanco);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navegacion {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--rojo);
+    text-decoration: none;
+    font-size: 1.55rem;
+    font-weight: 900;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    color: var(--rojo);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-size: 1.5rem;
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+/* PORTADA PRINCIPAL */
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 15, 10, 0.82),
+            rgba(25, 15, 10, 0.25)
+        ),
+        url("https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+    color: var(--blanco);
+    padding: 70px 5%;
+}
+
+.hero-contenido {
+    max-width: 700px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.hero .etiqueta {
+    color: var(--amarillo);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 540px;
+    margin-bottom: 28px;
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    background: var(--rojo);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 2px solid var(--rojo);
+    transition: transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+    background: var(--rojo-oscuro);
+    border-color: var(--rojo-oscuro);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+.boton-secundario {
+    margin-top: 12px;
+}
+
+/* TÍTULOS Y CATEGORÍAS */
+.titulo-seccion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.titulo-seccion h2 {
+    margin-bottom: 12px;
+}
+
+.titulo-seccion p {
+    color: var(--gris);
+}
+
+.categoria {
+    font-size: 1.65rem;
+    color: var(--rojo);
+    margin: 42px 0 20px;
+}
+
+/* TARJETAS DE PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(48, 37, 31, 0.18);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.04);
+}
+
+.tarjeta-contenido {
+    padding: 22px;
+}
+
+.tarjeta h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    color: var(--gris);
+    margin-bottom: 15px;
+}
+
+.precio {
+    display: inline-block;
+    color: var(--rojo);
+    font-weight: 900;
+    font-size: 1.05rem;
+}
+
+/* SECCIÓN NOSOTROS */
+.nosotros {
+    background: #f8e8c9;
+    padding-block: 75px;
+}
+
+.nosotros-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.nosotros-contenido h2 {
+    margin-bottom: 20px;
+}
+
+.nosotros-contenido p {
+    margin-bottom: 15px;
+    color: #514238;
+}
+
+.nosotros-contenido img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+/* SECCIÓN CONTACTO */
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.datos-contacto {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+.datos-contacto h3 {
+    color: var(--rojo);
+    margin-bottom: 20px;
+}
+
+.datos-contacto p {
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.datos-contacto a:not(.boton) {
+    color: var(--rojo);
+    font-weight: 700;
+}
+
+.mapa {
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+.mapa iframe {
+    display: block;
+}
+
+/* PIE DE PÁGINA */
+.pie {
+    text-align: center;
+    background: #30251f;
+    color: var(--blanco);
+    padding: 35px 15px;
+}
+
+.pie p:first-child {
+    color: var(--amarillo);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.pie p:last-child {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* BOTÓN VOLVER ARRIBA */
+.volver-arriba {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.volver-arriba:hover {
+    background: var(--rojo-oscuro);
+    transform: translateY(-3px);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-contenido {
+        gap: 25px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+    .navegacion {
+        min-height: 68px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 12px;
+    }
+
+    .menu.abierto {
+        display: flex;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px 5px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding-block: 55px;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .seccion,
+    .nosotros {
+        padding-block: 50px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta img {
+        height: 230px;
+    }
+
+    .nosotros-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-contenido img {
+        height: 280px;
+    }
+
+    .datos-contacto {
+        padding: 22px;
+    }
+
+    .mapa iframe {
+        height: 300px;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
